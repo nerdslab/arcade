@@ -11,7 +11,7 @@
 
 ![alt text](https://github.com/nerdslab/ArCaDe/blob/master/Final%20Folder/figures/figure2_final.png "Logo Title Text 1" | medium)
 
-<img src="https://github.com/..." data-canonical-src="https://github.com/nerdslab/ArCaDe/blob/master/Final%20Folder/figures/figure2_final.png" width="200" height="400" />
+<img src="https://github.com/nerdslab/ArCaDe/blob/master/Final%20Folder/figures/figure2_final.png" width="200" height="400" />
 
 *Cell detection results on cortical and retinal datasets.* (A) A Nissl-stained visual cortex image from the Allen Institute's Reference Atlas, computed probability maps, and detected cells overlaid on the probability map (red circles). (B) Cell detection results overlaid on a retinal sample in a rd10 mouse (each detected cell is displayed as a different color).
 
