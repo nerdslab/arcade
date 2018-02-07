@@ -1,4 +1,8 @@
-Figure Captions
+## Figure Captions
+
+#### Figure 1:
+
+![alt text](./ArCaDe/Final Folder/figures/figure1_final.png "Logo Title Text 1")
 
 Overview of Approximating Cellular Densities (ArCaDe) Method.} (A) A Nissl image of somatosensory cortex from the Allen Institute's Reference Atlas with exemplar patches overlaid. (B) A demonstration of the fitted polynomial in the presence of noise around the membrane of the cortex. (C) From top to bottom: A patch from the image to visualize the cellular distribution from the top (pia) to the bottom of the cortex (Layer 6). The red lines indicate the transitions between layers as identified by a trained neuroanatomist. Below, detected cell bodies in red overlaid on the same image patch. Next, the estimated density function obtained with our total variation minimization approach.
 
