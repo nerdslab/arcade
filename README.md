@@ -1,31 +1,28 @@
-NERDS
+ArCaDe
 ---------
-**Neural Event Reconstruction and Detection via Sparsity**
+**Approximating Cellular Densities**
 
-`version 0.1` - this is first repository of NERDS (published on Nov 13, 2014)
+`version 0.1` - this is first repository of ArCaDe (published on MMMM DD, YYYY)
 
 
 Related Publication
 ---------
-* Dyer, E.L.; Studer, C.; Robinson, J.T.; Baraniuk, R.G., "A robust and efficient method to recover neural events from noisy and corrupted data," Neural Engineering (NER), 6th International IEEE/EMBS Conference, pp.593-596, 2013 [[Paper]](http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=6696004)
+* T. J. LaGrow, M. G. Moore, J. A. Prasad, M. A. Davenport, and E. L. Dyer, “Approximating cellular densities from high-resolution neuroanatomical imaging data,” to appear in Proc. IEEE Int. Engineering in Medicine and Biology Conf. (EMBC), Honolulu, Hawaii, July 2018 [[Paper]](http://mdav.ece.gatech.edu/publications/lmpdd-embc-2018.pdf)
 
 Description
 ---------
-Matlab package implementing blind deconvolution method for neural spike recovery from either calcium traces or intracellular recordings of post-synaptic potentials.
+Matlab package _____
 
 Requirements
 ---------
 * Matlab version >= 2007
-* [SPGL1](https://www.math.ucdavis.edu/~mpf/spgl1/) (Solver for large-scale sparse reconstruction) see also at git [link](https://github.com/mpf/spgl1) (note that we did not include `SPGL1` in NERDS project) so make sure that you install `SPGL1` and include in MATLAB path.
 
 Installation
 ---------
 
-In order to download NERDS folder, either download `zip file` from the git repository directly or use `git` to clone the
+In order to download ArCaDe folder, either download `zip file` from the git repository directly or use `git` to clone the
 repository using the command:
-`git clone https://github.com/nerdslab/nerds`
-
-You also need to install `SPGL1`, run `spgsetup.m`, and then add to MATLAB path. After that, hover to the folder and run `setup_nerds.m` code.
+`git clone https://github.com/nerdslab/arcade`
 
 Usage
 ---------
