@@ -70,8 +70,11 @@ For synthetic example, the code will produce the graphs below. Note that after c
 
 Team members
 ----------
-* [Eva Dyer](http://dyerlab.gatech.edu/)
-* [Christoph Studer](http://www.csl.cornell.edu/~studer/)
+* Theodore J. LaGrow
+* Michael G. Moore
+* [Judy A. Prasad](https://neurobiology.uchicago.edu/page/judy-prasad)
+* [Mark A. Davenport](http://mdav.ece.gatech.edu/index.html)
+* [Eva L. Dyer](http://dyerlab.gatech.edu/)
 
 Acknowledgement
 ----------
@@ -80,4 +83,4 @@ Acknowledgement
 License
 -----------
 * The MIT License (MIT)
-Copyright (c) 2014 Eva Dyer and Christoph Studer
+Copyright (c) 2018 Theodore J. LaGrow, Michael G. Moore, Judy A. Prasad, Mark A. Davenport, and Eva L. Dyer
