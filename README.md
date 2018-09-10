@@ -28,6 +28,7 @@ Installation
 
 In order to download ArCaDe folder, either download `zip file` from the git repository directly or use `git` to clone the
 repository using the command:
+
 `git clone https://github.com/nerdslab/arcade`
 
 Usage
@@ -64,19 +65,6 @@ Example Code
 See the `example_synth.m` file for an example from the paper on synthetic data. 
 See the `example_nerds.m` file for an example where we apply NERDS algorithm to real calcium data.
 
-For synthetic example, the code will produce the graphs below. Note that after computing the sparse coefficients, we post-process the coefficients by thresholding the spike train and combining peaks that are close together.
-
-### Baseline drift and reconstructed spikes for synthetic data
-img....
-
-### Estimated spikes for synthetic data
-img...
-
-
-### Result of NERDS applied to real data
-img...
-
-
 Team members
 ----------
 * [Theodore J. LaGrow](http://www.bioengineering.gatech.edu/people/theodore-lagrow)
@@ -88,7 +76,8 @@ Team members
 
 Acknowledgement
 ----------
-* The calcium and electrophysiology data included in `example_real_data.mat` was collected in [Jason MacLean's Lab](http://www.macleanlab.com) at the University of Chicago. Check out the following two papers: [Runfeldt  et. al.](http://jn.physiology.org/content/early/2014/05/23/jn.00071.2014) and [Sadovsky AJ et. al.](http://www.ncbi.nlm.nih.gov/pubmed/21715667) for more details regarding the experimental methods utilized to acquire these simultaneous recordings. 
+
+
 
 License
 -----------
