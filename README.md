@@ -2,12 +2,18 @@ ArCaDe
 ---------
 **Approximating Cellular Densities**
 
-`version 0.1` - this is first repository of ArCaDe (published on MMMM DD, YYYY)
+`version 0.1` - this repository was last updated on 09/10/2018
 
 
 Related Publication
 ---------
-* T. J. LaGrow, M. G. Moore, J. A. Prasad, M. A. Davenport, and E. L. Dyer, “Approximating cellular densities from high-resolution neuroanatomical imaging data,” to appear in Proc. IEEE Int. Engineering in Medicine and Biology Conf. (EMBC), Honolulu, Hawaii, July 2018 [[Paper]](http://mdav.ece.gatech.edu/publications/lmpdd-embc-2018.pdf)
+
+You can find further details about how we apply the methods in this repo to quantify neocortical layers of mouse brains in the following papers. If you use any part of the code or data in this repo, please cite the first paper. Please direct any questions to Theodore J. LaGrow at tlagrow(at)gatech(dot)edu or Eva Dyer at evadyer{at}gatech{dot}edu.
+
+* T.J. LaGrow, M. Moore, J.A. Prasad, A. Webber, M.A. Davenport, E.L. Dyer, "Cytoarchitecture and Layer Estimation in High-Resolution Neuroanatomical Images," in review, July 2018.
+
+* T. J. LaGrow, M. G. Moore, J. A. Prasad, M. A. Davenport, and E. L. Dyer, “Approximating cellular densities from high-resolution neuroanatomical imaging data,” IEEE Engineering in Medicine and Biology Society Annual Conference (EMBC), July 2018. [[Paper]](http://mdav.ece.gatech.edu/publications/lmpdd-embc-2018.pdf)
+
 
 Description
 ---------
@@ -73,8 +79,9 @@ img...
 
 Team members
 ----------
-* Theodore J. LaGrow
-* Michael G. Moore
+* [Theodore J. LaGrow](http://www.bioengineering.gatech.edu/people/theodore-lagrow)
+* [Michael G. Moore](https://www.linkedin.com/in/michael-moore-87371725/)
+* [Alexis Webber)[https://www.linkedin.com/in/alexis-webber-gatechbme/]
 * [Judy A. Prasad](https://neurobiology.uchicago.edu/page/judy-prasad)
 * [Mark A. Davenport](http://mdav.ece.gatech.edu/index.html)
 * [Eva L. Dyer](http://dyerlab.gatech.edu/)
