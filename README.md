@@ -69,7 +69,7 @@ Team members
 ----------
 * [Theodore J. LaGrow](http://www.bioengineering.gatech.edu/people/theodore-lagrow)
 * [Michael G. Moore](https://www.linkedin.com/in/michael-moore-87371725/)
-* [Alexis Webber)[https://www.linkedin.com/in/alexis-webber-gatechbme/]
+* [Alexis Webber](https://www.linkedin.com/in/alexis-webber-gatechbme/)
 * [Judy A. Prasad](https://neurobiology.uchicago.edu/page/judy-prasad)
 * [Mark A. Davenport](http://mdav.ece.gatech.edu/index.html)
 * [Eva L. Dyer](http://dyerlab.gatech.edu/)
