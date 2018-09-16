@@ -97,6 +97,18 @@ if long_test_flag == 1
 
     % recombine
     Nmap_full = combine_celldetect_blocks(Centroids_best,BlockPos,size(CellMapErode));
+    
+    stats_full = regionprops('table',Nmap_full,'Centroid',...
+        'MajorAxisLength','MinorAxisLength');
+    centers_full = stats_full.Centroid;
+    diameters_full = mean([stats_full.MajorAxisLength stats_full.MinorAxisLength],2);
+    radii_full = diameters_full/2; %radius
+    
+    % see the overlaid cells
+    figure, 
+    subplot(1,4,1), imshow(im_og), title('Original Image'),
+    subplot(1,4,2), imagesc(CellMapErode), title('Probability Map'),
+    subplot(1,4,4), imshow(im_og), title("Overlaid Cells Full"), viscircles(centers_full, radii_full),
 end
 
 %% Save data (if needed)
