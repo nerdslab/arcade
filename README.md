@@ -33,9 +33,6 @@ repository using the command:
 
 `git clone https://github.com/nerdslab/arcade`
 
-[comment]: <> Usage
-[comment]: <> ---------
-
 
 Example Code
 ------------
@@ -50,9 +47,6 @@ Team members
 * [Judy A. Prasad](https://neurobiology.uchicago.edu/page/judy-prasad)
 * [Mark A. Davenport](http://mdav.ece.gatech.edu/index.html)
 * [Eva L. Dyer](http://dyerlab.gatech.edu/)
-
-[comment]: <> Acknowledgement
-[comment]: <> ----------
 
 
 
