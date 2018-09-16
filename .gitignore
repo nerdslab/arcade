@@ -1,2 +1,3 @@
 patch_extraction/data/*
+cell_detection/data/*
 *.asv
