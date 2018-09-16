@@ -37,7 +37,7 @@ repository using the command:
 Example Code
 ------------
 
-You can run any demo of the three steps in the ArCaDe pipeline independently each in their designated folders with the following scripts: 'script_patch_extraction.m', 'script_cell_detection.m', and 'script_rate_estimation.m'.
+You can run any demo of the three steps in the ArCaDe pipeline independently each in their designated folders with the following scripts: `script_patch_extraction.m`, `script_cell_detection.m`, and `script_rate_estimation.m`.
 
 Team members
 ----------
