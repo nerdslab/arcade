@@ -10,41 +10,52 @@ Description: This script is an example of the patch extraction used in the
 
 
 %% load data generated from script's output for experiment 100048576_293
-%load('patch_extraction_09_10_2018');
 
-% or
-%% init 
+% mark 1 to see only figures, or 0 to run code yourself
+ex_flag = 1;
 
-warning('off','all')
-patch_size = 100; % designating all of the widths of the patchs
-hyp = 810; %designating all of the heigths of the patches
+if ex_flag == 1
+    load('patch_extraction_09_16_2018');
+end
+ex_flag = 1;
 
-% load in original image
-im_og = imread('100048576_293_nissl.jpg');
-im = im_og(:,:,3); % third channel
-im2 = padarray(im,[hyp hyp],255,'both');
-[h, w] = size(im2);
-% load in recalculated probability maps
-im3 = imread('Nmap_100048576_293.tif');
-im_prob = padarray(im3,[hyp hyp],0,'both');
-% load in the Allen Institute's manually labeled atlas
-im4 = imread('100048576_293_atlas.jpg');
-im_atlas = padarray(im4,[hyp hyp],255,'both');
+%% init
 
+if ex_flag == 0
+    warning('off','all')
+    patch_size = 100; % designating all of the widths of the patchs
+    hyp = 810; %designating all of the heigths of the patches
+
+    % load in original image
+    im_og = imread('100048576_293_nissl.jpg');
+    im = im_og(:,:,3); % third channel
+    im2 = padarray(im,[hyp hyp],255,'both');
+    [h, w] = size(im2);
+    % load in recalculated probability maps
+    im3 = imread('Nmap_100048576_293.tif');
+    im_prob = padarray(im3,[hyp hyp],0,'both');
+    % load in the Allen Institute's manually labeled atlas
+    im4 = imread('100048576_293_atlas.jpg');
+    im_atlas = padarray(im4,[hyp hyp],255,'both');
+end
 %% plot the 3 images loaded from experiment 100048576_293
+
 figure,
 subplot(1,3,1), imshow(im_og), title('Original Image'),
 subplot(1,3,2), imshow(im3), title('Cell Probability Map'),
 subplot(1,3,3), imshow(im4), title('Manual Annotation of Atlas');
 
 %% Splitting the image in half to run connected components and polynomial fitting
-im_left  = ones(h,w).*255;
-im_right  = ones(h,w).*255;
 
-im_left(:,1:w/2)  = im2(:,1:w/2);
-im_right(:,w/2:w) = im2(:,w/2:w);
+if ex_flag == 0
+    im_left  = ones(h,w).*255;
+    im_right  = ones(h,w).*255;
 
+    im_left(:,1:w/2)  = im2(:,1:w/2);
+    im_right(:,w/2:w) = im2(:,w/2:w);
+end
 %% plot the splitting
+
 figure, 
 subplot(1,2,1), imagesc(im_left), title('Left division'),
 subplot(1,2,2), imagesc(im_right), title('Right division');
@@ -52,30 +63,34 @@ subplot(1,2,2), imagesc(im_right), title('Right division');
 
 %% Get the outline of the brain
 
-Mask_left = findbrainboundary(im_left, 245);
-Mask_right = findbrainboundary(im_right, 245);
+if ex_flag == 0
+    Mask_left = findbrainboundary(im_left, 245);
+    Mask_right = findbrainboundary(im_right, 245);
+end
+
 figure,
 subplot(1,2,1), imagesc(Mask_left), title('Left mask'),
 subplot(1,2,2), imagesc(Mask_right),title('Right mask');
 
-
 %% Setting the number of patches for each quartile 
-num_of_patches = 400;
-ratio = ceil(num_of_patches*(.4)); % we only want the sections in the neocortex on the 3rd and 4th quartile
 
-[outline_of_brain_top_left, outline_of_brain_bottom_left, p1_left, p2_left, x1_left, x2_left, y1_left, y2_left] = ...
-    generate_patch_information(Mask_left, num_of_patches, 1);
+if ex_flag == 0
+    num_of_patches = 400;
+    ratio = ceil(num_of_patches*(.4)); % we only want the sections in the neocortex on the 3rd and 4th quartile
 
-[outline_of_brain_top_right, outline_of_brain_bottom_right, p1_right, p2_right, x1_right, x2_right, y1_right, y2_right] = ...
-    generate_patch_information(Mask_right, num_of_patches, 0);
+    [outline_of_brain_top_left, outline_of_brain_bottom_left, p1_left, p2_left, x1_left, x2_left, y1_left, y2_left] = ...
+        generate_patch_information(Mask_left, num_of_patches, 1);
 
+    [outline_of_brain_top_right, outline_of_brain_bottom_right, p1_right, p2_right, x1_right, x2_right, y1_right, y2_right] = ...
+        generate_patch_information(Mask_right, num_of_patches, 0);
+end
 %% Generate slopes of each patch in each quartile
-
-[outline_of_brain_top_with_slopes_left] = generateslopes(p1_left, outline_of_brain_top_left, x1_left);
-[outline_of_brain_bottom_with_slopes_left] = generateslopes(p2_left, outline_of_brain_bottom_left, x2_left);
-[outline_of_brain_top_with_slopes_right] = generateslopes(p1_right, outline_of_brain_top_right, x1_right);
-[outline_of_brain_bottom_with_slopes_right] = generateslopes(p2_right, outline_of_brain_bottom_right, x2_right);
-
+if ex_flag == 0
+    [outline_of_brain_top_with_slopes_left] = generateslopes(p1_left, outline_of_brain_top_left, x1_left);
+    [outline_of_brain_bottom_with_slopes_left] = generateslopes(p2_left, outline_of_brain_bottom_left, x2_left);
+    [outline_of_brain_top_with_slopes_right] = generateslopes(p1_right, outline_of_brain_top_right, x1_right);
+    [outline_of_brain_bottom_with_slopes_right] = generateslopes(p2_right, outline_of_brain_bottom_right, x2_right);
+end
 
 %% Graphing outline
 
@@ -124,62 +139,65 @@ title('Depiction of outline of patch extraction');
 
 %% Generating patches from original image
 
-% top right - quartile 1
-[patch_mx_top_right, point_top_right, end_point_top_right] = ...
-    extracting_patches(x1_right, outline_of_brain_top_with_slopes_right, im2, patch_size, hyp, 1);
+if ex_flag == 0
+    % top right - quartile 1
+    [patch_mx_top_right, point_top_right, end_point_top_right] = ...
+        extracting_patches(x1_right, outline_of_brain_top_with_slopes_right, im2, patch_size, hyp, 1);
 
-% top left - quartile 2
-[patch_mx_top_left, point_top_left, end_point_top_left] = ...
-    extracting_patches(x1_left, outline_of_brain_top_with_slopes_left, im2, patch_size, hyp, 2);
+    % top left - quartile 2
+    [patch_mx_top_left, point_top_left, end_point_top_left] = ...
+        extracting_patches(x1_left, outline_of_brain_top_with_slopes_left, im2, patch_size, hyp, 2);
 
-% bottom left - quartile 3
-[patch_mx_bottom_left, point_bottom_left, end_point_bottom_left] = ...
-    extracting_patches(x2_left(1:ratio), outline_of_brain_bottom_with_slopes_left, im2, patch_size, hyp, 3);
+    % bottom left - quartile 3
+    [patch_mx_bottom_left, point_bottom_left, end_point_bottom_left] = ...
+        extracting_patches(x2_left(1:ratio), outline_of_brain_bottom_with_slopes_left, im2, patch_size, hyp, 3);
 
-% bottom right - quartile 4
-[patch_mx_bottom_right, point_bottom_right, end_point_bottom_right] = ...
-    extracting_patches(x2_right(1:ratio), outline_of_brain_bottom_with_slopes_right, im2, patch_size, hyp, 4);
-
+    % bottom right - quartile 4
+    [patch_mx_bottom_right, point_bottom_right, end_point_bottom_right] = ...
+        extracting_patches(x2_right(1:ratio), outline_of_brain_bottom_with_slopes_right, im2, patch_size, hyp, 4);
+end
 
 %% Generate patches from probability map
 
-% top right - quartile 1
-[patch_mx_top_right_prob, point_top_right_prob, end_point_top_right_prob] = ...
-    extracting_patches(x1_right, outline_of_brain_top_with_slopes_right, im_prob, patch_size, hyp, 1); 
+if ex_flag == 0
+    % top right - quartile 1
+    [patch_mx_top_right_prob, point_top_right_prob, end_point_top_right_prob] = ...
+        extracting_patches(x1_right, outline_of_brain_top_with_slopes_right, im_prob, patch_size, hyp, 1); 
 
-% top left - quartile 2
-[patch_mx_top_left_prob, point_top_left_prob, end_point_top_left_prob] = ...
-    extracting_patches(x1_left, outline_of_brain_top_with_slopes_left, im_prob, patch_size, hyp, 2);
+    % top left - quartile 2
+    [patch_mx_top_left_prob, point_top_left_prob, end_point_top_left_prob] = ...
+        extracting_patches(x1_left, outline_of_brain_top_with_slopes_left, im_prob, patch_size, hyp, 2);
 
-% bottom left - quartile 3
-[patch_mx_bottom_left_prob, point_bottom_left_prob, end_point_bottom_left_prob] = ...
-    extracting_patches(x2_left(1:ratio), outline_of_brain_bottom_with_slopes_left, im_prob, patch_size, hyp, 3);
+    % bottom left - quartile 3
+    [patch_mx_bottom_left_prob, point_bottom_left_prob, end_point_bottom_left_prob] = ...
+        extracting_patches(x2_left(1:ratio), outline_of_brain_bottom_with_slopes_left, im_prob, patch_size, hyp, 3);
 
-% bottom right - quartile 4
-[patch_mx_bottom_right_prob, point_bottom_right_prob, end_point_bottom_right_prob] = ...
-    extracting_patches(x2_right(1:ratio), outline_of_brain_bottom_with_slopes_right, im_prob, patch_size, hyp, 4);
-
+    % bottom right - quartile 4
+    [patch_mx_bottom_right_prob, point_bottom_right_prob, end_point_bottom_right_prob] = ...
+        extracting_patches(x2_right(1:ratio), outline_of_brain_bottom_with_slopes_right, im_prob, patch_size, hyp, 4);
+end
 
 %% Generate patches from manually annotated atlas
 
-% top right - quartile 1
-[patch_mx_top_right_atlas, point_top_right_atlas, end_point_top_right_atlas] = ...
-    extracting_patches(x1_right, outline_of_brain_top_with_slopes_right, im_atlas(:,:,3), patch_size, hyp, 1);
+if ex_flag == 0
+    % top right - quartile 1
+    [patch_mx_top_right_atlas, point_top_right_atlas, end_point_top_right_atlas] = ...
+        extracting_patches(x1_right, outline_of_brain_top_with_slopes_right, im_atlas(:,:,3), patch_size, hyp, 1);
 
-% top left - quartile 2
-[patch_mx_top_left_atlas, point_top_left_atlas, end_point_top_left_atlas] = ...
-    extracting_patches(x1_left, outline_of_brain_top_with_slopes_left, im_atlas(:,:,3), patch_size, hyp, 2);
+    % top left - quartile 2
+    [patch_mx_top_left_atlas, point_top_left_atlas, end_point_top_left_atlas] = ...
+        extracting_patches(x1_left, outline_of_brain_top_with_slopes_left, im_atlas(:,:,3), patch_size, hyp, 2);
 
-% bottom left - quartile 3
-[patch_mx_bottom_left_atlas, point_bottom_left_atlas, end_point_bottom_left_atlas] = ...
-    extracting_patches(x2_left(1:ratio), outline_of_brain_bottom_with_slopes_left, im_atlas(:,:,3), patch_size, hyp, 3);
+    % bottom left - quartile 3
+    [patch_mx_bottom_left_atlas, point_bottom_left_atlas, end_point_bottom_left_atlas] = ...
+        extracting_patches(x2_left(1:ratio), outline_of_brain_bottom_with_slopes_left, im_atlas(:,:,3), patch_size, hyp, 3);
 
-% bottom right - quartile 4
-[patch_mx_bottom_right_atlas, point_bottom_right_atlas, end_point_bottom_right_atlas] = ...
-    extracting_patches(x2_right(1:ratio), outline_of_brain_bottom_with_slopes_right, im_atlas(:,:,3), patch_size, hyp, 4);
-
+    % bottom right - quartile 4
+    [patch_mx_bottom_right_atlas, point_bottom_right_atlas, end_point_bottom_right_atlas] = ...
+        extracting_patches(x2_right(1:ratio), outline_of_brain_bottom_with_slopes_right, im_atlas(:,:,3), patch_size, hyp, 4);
+end
 
 %% Save data (if needed)
-%save('patch_extraction_09_10_2018');
+%save('patch_extraction_09_16_2018');
 
 %EOF
