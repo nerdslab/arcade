@@ -2,7 +2,7 @@ ArCaDe
 ---------
 **Approximating Cellular Densities**
 
-`version 0.1` - this repository was last updated on 09/10/2018
+`version 0.1` - this repository was last updated on 09/16/2018
 
 
 Related Publication
