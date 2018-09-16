@@ -3,7 +3,7 @@ script_cell_detection.m
 developed by: Theodore J. LaGrow
 
 Description: This script is an example of the cell detection used in the
-    ArCaDe pipeline. The data generated in script can be found at:
+    ArCaDe pipeline. The data used and generated in script can be found at:
     https://drive.google.com/open?id=1p6NiX26l39gscg6nYFltlT1fZ7nwZqpG
 
 %}
