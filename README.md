@@ -19,7 +19,7 @@ Description
 ---------
 This repository is designed to hold demonstration code for the ArCaDe pipeline.  The three main folders (patch_extraction/, cell_detection/, and rate_estimation/) hold the scripts needed to perform each step. Figures produced by the demo scripts are located in their respected folders.
 
-The data utilized in this repo can be found at: https://drive.google.com/drive/folders/1p6NiX26l39gscg6nYFltlT1fZ7nwZqpG?usp=sharing.  The data needs to be included into the path of your working envirnment. 
+The data utilized in this repo can be found at: https://drive.google.com/drive/folders/1p6NiX26l39gscg6nYFltlT1fZ7nwZqpG?usp=sharing.  The data needs to be included into the path of your working environment. 
 
 Requirements
 ---------
