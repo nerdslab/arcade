@@ -2,7 +2,7 @@ ArCaDe
 ---------
 **Approximating Cellular Densities**
 
-`version 0.1` - this repository was last updated on 09/16/2018
+`version 0.1` - this repository was last updated on 10/2/2018
 
 
 Related Publication
@@ -43,10 +43,6 @@ You can run any demo of the three steps in the ArCaDe pipeline independently eac
 Team members
 ----------
 * [Theodore J. LaGrow](http://www.bioengineering.gatech.edu/people/theodore-lagrow)
-* [Michael G. Moore](https://www.linkedin.com/in/michael-moore-87371725/)
-* [Alexis Webber](https://www.linkedin.com/in/alexis-webber-gatechbme/)
-* [Judy A. Prasad](https://neurobiology.uchicago.edu/page/judy-prasad)
-* [Mark A. Davenport](http://mdav.ece.gatech.edu/index.html)
 * [Eva L. Dyer](http://dyerlab.gatech.edu/)
 
 
